@@ -3,9 +3,14 @@ import { AssistantModule } from '@boldare/openai-assistant';
 import { assistantConfig } from './chat.config';
 import { ChatSockets } from './chat.sockets';
 import { WeatherAgentModule } from './weatherAgent/weatherAgentModule';
+import { SpaceAgentModule } from './nasaAgent/spaceAgentModule';
 
 @Module({
-  imports: [WeatherAgentModule, AssistantModule.forRoot(assistantConfig)],
+  imports: [
+    WeatherAgentModule,
+    SpaceAgentModule,
+    AssistantModule.forRoot(assistantConfig),
+  ],
   providers: [ChatSockets],
 })
 export class ChatbotModule {}
